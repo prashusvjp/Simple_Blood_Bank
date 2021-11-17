@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <title>Blood Bank</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="../res/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="./stylesheets/add_stock.css">
+    <script src="register_bloodbank.js"></script>
+  </head>
+
+
+  <body onload="onLoad()">
+    <div id="content">
+        <div id="stockMainCard">
+        <div class="card border-danger mb-3">
+            <div class="card-header">
+              <h4>Register New Stock</h4>
+            </div>
+            <div class="card-body text-danger">
+              <form>
+                
+
+                <div class="form-group">
+                    <label for="doner-dob">Doner ID</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="doner_id"
+                      placeholder="Enter the doner id"
+                    />
+                    </div>
+
+
+                  <div class="form-group">
+                    <label for="doner-dob">Arrival Date</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="arrival_date"
+                      placeholder="Enter the arrival date"
+                    />
+                    </div>
+
+                    
+                      <div class="form-group">
+                        <label for="dblood-group">Blood Group</label>
+                        <input type="text" id="dblood-group" name="dblood-group" class="form-control" value="" readonly>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="dblood-group">Blood Category</label>
+                        <select class="form-control" id="dblood-group">
+                          <option>RBC</option>
+                          <option>WBC</option>
+                          <option>Platelets</option>
+                          <option>Plasma</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="dblood-group">Status</label>
+                        <select class="form-control" id="dblood-status">
+                          <option>Testing</option>
+                          <option>In-stock</option>
+                        </select>
+                      </div>
+
+                      
+
+      
+                      
+                </div>
+                <div id="submitButton">
+                    <button type="button" id="stockRegistration" class="btn btn-danger">Submit</button>
+                    <button type="clear" id="sclear" class="btn btn-primary">Clear</button>
+                </div>
+
+                <!-- <a href="./update_stock.html" class="btn btn-primary">Manage</a> -->
+                
+              </form>
+              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </body>
+</html>
