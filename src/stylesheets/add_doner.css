@@ -1,0 +1,44 @@
+#donarMainCard
+{
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
+#submitButton{
+    padding: 20px;
+    display:flex;
+
+}
+
+#bregistration{
+    font-size:20px;
+    width:200px;
+    margin-left :40px;
+}
+
+#bclear{
+    font-size:20px;
+    width:200px;
+    margin-left :300px;
+}
+
+.form-control:focus {
+    border-color: #FF0000;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+  }
+
+  #blogin{
+      display:flex;
+      margin:auto;
+      padding:20px;
+  }
+
+  #gender-radio{
+      margin-left: 70px;
+      color:black;
+  }
+
+  .card-header{
+      background-color: #df4759;
+  }
