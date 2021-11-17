@@ -1,3 +1,3 @@
 <?php
-echo "Connection successful Hola"
+echo "Connection successful"
 ?>
