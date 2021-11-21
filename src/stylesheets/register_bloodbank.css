@@ -33,3 +33,7 @@
       margin:auto;
       padding:20px;
   }
+
+  .card-header{
+    background-color: #df4759;
+}

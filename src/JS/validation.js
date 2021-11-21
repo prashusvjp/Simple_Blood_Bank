@@ -65,23 +65,23 @@ function onRegisterSubmit(){
     && isPhoneNoValid(bankPhoneNo.value) 
     && isNameAndAddressValid(bankName.value,bankAddress.value) 
     && isPasswordValid(bankPassword.value,bankCheckPassword.value)){
-        console.log("Ready to request to register")
+        console.log(CryptoJS.AES.encrypt(bankEmailID.value, bankPassword.value))
         let request = new XMLHttpRequest();
         request.open("POST",'./backend/register.php',true)
         request.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
         request.send(JSON.stringify({
-            "name" : bankName,
-            "emailId" : bankEmailID,
-            "phoneNo" : bankPhoneNo,
-            "address" : bankAddress,
-            "startDate" : bankStartDate,
-            "password" : bankPassword
+            "name" : bankName.value,
+            "emailId" : CryptoJS.AES.encrypt(bankEmailID.value, bankPassword.value),
+            "phoneNo" : bankPhoneNo.value,
+            "address" : bankAddress.value,
+            "startDate" : bankStartDate.value,
+            "password" : bankPassword.value
         }))
         request.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
               console.log(this.responseText)
             }
-          };
+        };
     }
     else
         console.log("Not ready")
