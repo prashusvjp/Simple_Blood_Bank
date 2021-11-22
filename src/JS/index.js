@@ -41,6 +41,12 @@ function onLoad(){
               <li class="nav-item" onclick="onNavbarClick(this)">
                 <a class="nav-link" href="update_stock.html" >Stock</a>
               </li>
+              <li class="nav-item" onclick="onNavbarClick(this)">
+                <a class="nav-link" href="staff_list.html" >Staff</a>
+              </li>
+              <li class="nav-item" onclick="onNavbarClick(this)">
+                <a class="nav-link" href="navbar.html" >Navbar</a>
+              </li>
             </ul>
           </nav>
           <iframe id="frame" src='login.html' style='width:100%; height:95%'></iframe>`    

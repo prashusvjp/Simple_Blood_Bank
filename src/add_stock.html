@@ -11,9 +11,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="./stylesheets/add_stock.css">
-    <script src="register_bloodbank.js"></script>
+    <script type="text/javascript" src='./JS/validation.js'></script>
+    <script type="text/javascript" src='./JS/stock.js'></script>
   </head>
 
 
@@ -31,7 +33,7 @@
                 <div class="form-group">
                     <label for="doner-dob">Doner ID</label>
                     <input
-                      type="text"
+                      type="search"
                       class="form-control"
                       id="doner_id"
                       placeholder="Enter the doner id"
@@ -39,6 +41,7 @@
                     <span class='error-span' id="did-error" style="color:'red'"></span>
                     </div>
 
+ 
 
                   <div class="form-group">
                     <label for="doner-dob">Arrival Date</label>
@@ -59,8 +62,8 @@
                       </div>
 
                       <div class="form-group">
-                        <label for="dblood-group">Blood Category</label>
-                        <select class="form-control" id="dblood-group">
+                        <label for="dblood-category">Blood Category</label>
+                        <select class="form-control" id="dblood-category">
                           <option>RBC</option>
                           <option>WBC</option>
                           <option>Platelets</option>
@@ -69,7 +72,7 @@
                       </div>
 
                       <div class="form-group">
-                        <label for="dblood-group">Status</label>
+                        <label for="dblood-status">Status</label>
                         <select class="form-control" id="dblood-status">
                           <option>Testing</option>
                           <option>In-stock</option>

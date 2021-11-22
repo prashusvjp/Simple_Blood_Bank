@@ -7,6 +7,7 @@ function isEmailValid(element,error_element){
     return false
 }
 
+
 function isPhoneNoValid(element,error_element){
     if((element.value).length == 10)
         return true
@@ -46,23 +47,27 @@ function isPasswordValid(password,cpassword,error_element){
     return false
 }
 
-function isAboveAge(dob){
-    dob = dob.split("-")
+function isAboveAge(element,error_element){
+    dob = (element.value).split("-")
     dob = new Date(Number(dob[2]),Number(dob[1]),Number(dob[0]))
     var ageDifMs = Date.now() - dob.getTime();
     var ageDate = new Date(ageDifMs); // miliseconds from epoch
-    return Math.abs(ageDate.getUTCFullYear() - 1970) > 18;
+    if(Math.abs(ageDate.getUTCFullYear() - 1970) < 18){
+        error_element.innerText = "Sorry, age must be above 18"
+        return false
+    }
+    return true
 }
+var binaryBlob = null
 
 function convertToBinary(inputElement) {
-    var binaryBlob = null
     var file = inputElement.files[0];
     var reader = new FileReader();
-    reader.onloadend = function() {
+    reader.onloadend =  function() {
         var data=(reader.result).split(',')[1];
         binaryBlob = atob(data);
     }
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(file)
     return binaryBlob
 }
 
@@ -76,7 +81,7 @@ function onLoginSubmit(){
     document.getElementById("password-error").innerText=""
     bankEmailID = document.getElementById('loginEmail')
     bankPassword = document.getElementById('loginPassword')
-    if(isEmailValid(bankEmailID.value) && bankPassword != ''){
+    if(isEmailValid(bankEmailID,document.getElementById("password-error")) && bankPassword != ''){
         let request = new XMLHttpRequest();
         request.open("POST",'./backend/bank_login.php',true)
         request.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
@@ -91,10 +96,23 @@ function onLoginSubmit(){
             if(res == 0)
                 document.getElementById("password-error").innerText="Incorrect username/password"
             else
-                console.log("Logged In")
+                document.cookie='bankId='+this.responseText
             }
         };
     }
+}
+
+
+
+
+function _base64ToArrayBuffer(base64) {
+    var binary_string = window.atob(base64);
+    var len = binary_string.length;
+    var bytes = new Uint8Array(len);
+    for (var i = 0; i < len; i++) {
+        bytes[i] = binary_string.charCodeAt(i);
+    }
+    return bytes.buffer;
 }
 
 function clearErrorMessages(){
@@ -103,7 +121,6 @@ function clearErrorMessages(){
     document.getElementById('bname-error').innerText = ""
     document.getElementById('baddress-error').innerText = ""
     document.getElementById('brepassword-error').innerText = ""
-
 }
 
 function onRegisterSubmit(){
@@ -137,12 +154,13 @@ function onRegisterSubmit(){
             res = Number(this.responseText)
             console.log(res,this.responseText)
               if(res > 0)
-                console.log("User created succesfully")
+                    alert("User created succesfully")
               else{ 
-                if(res < 0)
-                    console.log("User already exists")
-                else
-                    console.log("Sorry, something went wrong please try again later")
+                if(res < 0){
+                    bankEmailID.focus()
+                    document.getElementById('bemail-error').innerText = "User already exists"
+                }else
+                    alert("Sorry, something went wrong please try again later")
             }
             }
         };

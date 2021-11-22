@@ -13,7 +13,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="./stylesheets/add_doner.css">
-    <script src="register_bloodbank.js"></script>
+    <script src="./JS/doner.js"></script>
+    <script src="./JS/validation.js"></script>
   </head>
 
 
@@ -31,13 +32,13 @@
                   <input
                     type="text"
                     class="form-control"
-                    id="danme"
+                    id="dname"
                     placeholder="Enter valid name"
                   />
                    <span class='error-span' id="dname-error" style="color:'red'"></span>
                 </div>
 
-                <div class="form-group">
+              
 
                     <div class="form-group">
                         <label for="demail">Email</label>
@@ -47,11 +48,9 @@
                           id="demail"
                           placeholder="Enter valid email"
                         />
-                        <small id="emailHelp" class="form-text text-muted"
-                    >We'll never share your email with anyone else.</small>
+                        <span class='error-span' id="demail-error" style="color:'red'"></span>
                     </div>
-                    <span class='error-span' id="demail-error" style="color:'red'"></span>
-                  </div>
+                   
 
                   <div class="form-group">
                     <label for="dphone">Phone Number</label>
@@ -127,7 +126,7 @@
                
                 </div>
                 <div id="submitButton">
-                    <button type="button" id="bregistration" class="btn btn-danger">Submit</button>
+                    <button type="button" id="bregistration" class="btn btn-danger" onclick='onDonerSubmit()'>Submit</button>
                     <button type="clear" id="bclear" class="btn btn-primary">Clear</button>
                 </div>
                 

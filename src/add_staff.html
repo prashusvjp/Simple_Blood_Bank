@@ -13,11 +13,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="./stylesheets/add_staff.css">
-    <script type="text/javascript" src='./JS/add_staff.js'></script>
+    <script type="text/javascript" src='./JS/validation.js'></script>
+    <script type="text/javascript" src='./JS/staff.js'></script>
   </head>
 
 
-  <body>
+  <body onload="onLoad()">
     <div id="content">
         <div id="staffMainCard">
         <div class="card border-danger mb-3">
@@ -43,7 +44,7 @@
                     <div class="form-group">
                         <label for="semail">Email</label>
                         <input
-                          type="smail"
+                          type="email"
                           class="form-control"
                           id="semail"
                           placeholder="Enter valid email"
@@ -82,9 +83,9 @@
                   <div class="form-group">
                     <label for="sdob">DOB</label>
                     <input
-                      type="sdate"
+                      type="date"
                       class="form-control"
-                      id="sDate"
+                      id="sdob"
                       placeholder="Enter the date of birth"
                       required
                     />
@@ -97,7 +98,7 @@
                     </label>
                     <div id="gender-radio">
                     <input type="radio" id="smale" name="sgender" value="male" checked>
-                        <label for="dmale">Male</label>&nbsp
+                        <label for="smale">Male</label>&nbsp
                         <input type="radio" id="sfemale" name="sgender" value="female" checked>
                         <label for="sfemale">Female</label>&nbsp
                       <input type="radio" id="sothers" name="sgender" value="others">
@@ -129,6 +130,18 @@
                         </select>
                       </div>
 
+                      <div class="form-group">
+                    <label for="ssalary">Salary</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="ssalary"
+                      placeholder="Enter salary"
+                      required
+                    />
+                    <span class='error-span' id="salary-error" style="color:'red'"></span>
+                  </div>
+
 
 
                   <div class="form-group">
@@ -147,7 +160,7 @@
                   <div class="form-group">
                   <label for="bcheckPassword">Re-enter Password</label>
                   <input
-                    type="sassword"
+                    type="password"
                     class="form-control"
                     id="scheckPassword"
                     placeholder="Re-enter the password"
@@ -165,11 +178,32 @@
                
                 </div>
                 <div id="submitButton">
-                    <button type="button" id="staffRegistration" class="btn btn-danger" onclick="onRegisterSubmit()">Submit</button>
+                    <button type="button" id="staffRegistration" class="btn btn-danger" onclick='onStaffSubmit()' data-toggle="modal" data-target="#exampleModalLong">Submit</button>
                     <button type="clear" id="sclear" class="btn btn-primary" onclick="onClear()">Clear</button>
                 </div>
                
               </form>
+
+              <!-- Modal -->
+<!--<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>-->
               <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
             </div>
           </div>

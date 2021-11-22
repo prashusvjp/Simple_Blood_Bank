@@ -15,10 +15,9 @@ if($connection->connect_error){
         $user_count = mysqli_fetch_array($result)['count'];
        ++$user_count;
        $query = "insert into blood_bank values".
-       "('".$user_count."','".$data['name']."','".$data['emailId']."','".$data['phoneNo']."',
+       "('B".$user_count."','".$data['name']."','".$data['emailId']."','".$data['phoneNo']."',
        '".$data['address']."','".$data['startDate']."','Open','".$data['password']."');";
     $result = mysqli_query($connection,$query);
-    echo $result;
     if($result)
         echo 1;
     else

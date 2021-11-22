@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="./stylesheets/update_stock.css">
+    <link rel="stylesheet" href="./stylesheets/staff_list.css">
     <script src="register_bloodbank.js"></script>
   </head>
 
@@ -20,26 +20,40 @@
   <body onload="onLoad()">
 
        <div class="Maincontainer">
-		<table class="table">
-  <thead class="table-danger">
+		<table class="table table-bordered">
+  <thead class=" table-danger">
     <tr>
       <th scope="col">#</th>
-      <th scope="col">StockID</th>
-      <th scope="col">Status</th>
+      <th scope="col">Nama</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Address</th>
+      <th scope="col">DOB</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Bloodgroup</th>
+      <th scope="col">Role</th>
+      <th scope="col">Salary</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody id="get_stock">
-		       <tr>
+		        <tr>
 		        <td>1</td>
-		        <td>1234</td>
-		        <td>sold</td></b>
-		        <td>
-              	<a href="#" ><img src="../res/edit.png"  width="30" height="30">  </a>
-		        	  <a href="#" ><img src="../res/delete.png"  width="30" height="30"></a>
+		        <td>Prashanth S</td>
+		        <td>prashusvjp@gmail.com</td></b>
+		        <td>9112345678</td>
+                <td>bangalore</td>
+                <td>21-08-2001</td>
+                <td>Male</td>
+                <td>A+</td>
+                <td>Admistrator</td>
+                <td>80000</td>
+                <td>
+              	<a href="#" ><img src="../res/edit.png"  width="35" height="30">  </a>
+		        	  <a href="#" ><img src="../res/delete.png"  width="35" height="30"></a>
 		        	
 		        </td>
-		      </tr>
+		      </tr> 
       
   </tbody>
 </table>
