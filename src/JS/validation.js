@@ -1,25 +1,48 @@
-function isEmailValid(emailId){
+function isEmailValid(element,error_element){
     let regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if(emailId.match(regex))
+    if((element.value).match(regex))
         return true
+    element.focus()
+    error_element.innerText="Invalid Email ID"
     return false
 }
 
-function isPhoneNoValid(phoneNo){
-    if(phoneNo.length == 10)
+function isPhoneNoValid(element,error_element){
+    if((element.value).length == 10)
         return true
+    element.focus()
+    error_element.innerText="Invalid Phone number"
     return false
 }
 
-function isNameAndAddressValid(data){
-    if(data != '' )
+function isNameValid(element,error_element){
+    if(element.value != '' )
         return true
+    element.focus()
+    error_element.innerText="Name field is required"
     return false
 }
 
-function isPasswordValid(password,cpassword){
-    if(password.lenght!=0 && password == cpassword)
+function isAddressValid(element,error_element){
+    if(element.value != '')
         return true
+    element.focus()
+    error_element.innerText="Address field is required"
+    return false
+}
+
+function isPasswordValid(password,cpassword,error_element){
+    //let regex = /^(?:([A-Z])+([a-z])+(\d)+(\W)+){8,12}$/
+    let value = password.value 
+    if(value.length>=8)
+        if(password.value == cpassword.value)
+            return true
+        else
+            error_element.innerText="Passwords do not match"
+    else
+            //error_element.innerText="Password should consist of atleast 8 characters\n*Minimum 1 uppercase letter\n*Minimum 1 lowercase letter\n*Minimum 1 special character"
+            error_element.innerText="Password should consist of atleast 8 characters"
+    password.focus()
     return false
 }
 
@@ -43,16 +66,48 @@ function convertToBinary(inputElement) {
     return binaryBlob
 }
 
+function clearLoginUI(){
+    document.getElementById('loginEmail').value = ''
+    document.getElementById('loginPassword').value = ''
+    document.getElementById("password-error").innerText=""
+}
+
 function onLoginSubmit(){
-    bankEmailID = document.getElementById('bemail')
-    bankPassword = document.getElementById('bpassword')
-    if(isEmailValid(bankEmailID.value) && bankPassword != '')
-        console.log("Ready to login")
-    else
-        console.log("not ready")
+    document.getElementById("password-error").innerText=""
+    bankEmailID = document.getElementById('loginEmail')
+    bankPassword = document.getElementById('loginPassword')
+    if(isEmailValid(bankEmailID.value) && bankPassword != ''){
+        let request = new XMLHttpRequest();
+        request.open("POST",'./backend/bank_login.php',true)
+        request.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
+        request.send(JSON.stringify({
+            "emailId" : bankEmailID.value,
+            "password" : bankPassword.value
+        }))
+        request.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            res = Number(this.responseText)
+            console.log(res,this.responseText)
+            if(res == 0)
+                document.getElementById("password-error").innerText="Incorrect username/password"
+            else
+                console.log("Logged In")
+            }
+        };
+    }
+}
+
+function clearErrorMessages(){
+    document.getElementById('bemail-error').innerText = ""
+    document.getElementById('bphone-error').innerText = ""
+    document.getElementById('bname-error').innerText = ""
+    document.getElementById('baddress-error').innerText = ""
+    document.getElementById('brepassword-error').innerText = ""
+
 }
 
 function onRegisterSubmit(){
+    clearErrorMessages()
     bankName = document.getElementById('bname')
     bankEmailID = document.getElementById('bemail')
     bankPhoneNo = document.getElementById('bphone')
@@ -61,17 +116,17 @@ function onRegisterSubmit(){
     bankPassword = document.getElementById('bpassword')
     bankCheckPassword = document.getElementById('bcheckPassword')
     
-    if(isEmailValid(bankEmailID.value) 
-    && isPhoneNoValid(bankPhoneNo.value) 
-    && isNameAndAddressValid(bankName.value,bankAddress.value) 
-    && isPasswordValid(bankPassword.value,bankCheckPassword.value)){
-        console.log(CryptoJS.AES.encrypt(bankEmailID.value, bankPassword.value))
+    if(isEmailValid(bankEmailID,document.getElementById('bemail-error')) 
+    && isPhoneNoValid(bankPhoneNo,document.getElementById('bphone-error')) 
+    && isNameValid(bankName,document.getElementById('bname-error')) 
+    && isAddressValid(bankAddress,document.getElementById('baddress-error'))
+    && isPasswordValid(bankPassword,bankCheckPassword,document.getElementById('brepassword-error'))){
         let request = new XMLHttpRequest();
         request.open("POST",'./backend/register.php',true)
         request.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
         request.send(JSON.stringify({
             "name" : bankName.value,
-            "emailId" : CryptoJS.AES.encrypt(bankEmailID.value, bankPassword.value),
+            "emailId" : bankEmailID.value,
             "phoneNo" : bankPhoneNo.value,
             "address" : bankAddress.value,
             "startDate" : bankStartDate.value,
@@ -79,10 +134,17 @@ function onRegisterSubmit(){
         }))
         request.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-              console.log(this.responseText)
+            res = Number(this.responseText)
+            console.log(res,this.responseText)
+              if(res > 0)
+                console.log("User created succesfully")
+              else{ 
+                if(res < 0)
+                    console.log("User already exists")
+                else
+                    console.log("Sorry, something went wrong please try again later")
+            }
             }
         };
     }
-    else
-        console.log("Not ready")
 }

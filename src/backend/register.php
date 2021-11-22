@@ -1,22 +1,30 @@
 <?php
 $data = json_decode(file_get_contents('php://input'), true);
-echo $data['emailId']."\n".$data['password'];
-$create_user = "create user ".$data['emailId']." identified by '".$data['password']."';";
-
-$initial_query = "create if not exists table Blood_Bank(
-    BankID varchar(20) primary key,
-    Bank_Name varchar(20) not null,
-    EmailID varchar(50) not null,
-    PhoneNo bigint not null,
-    Address varchar(50) not null,
-    Start_Date date not null,
-    Status varchar(20) not null);";
 
 $connection = new mysqli("localhost","root","mysql");
+mysqli_select_db($connection,"db_blood_bank");
 if($connection->connect_error){
     echo "Connection failed";
 }else{
-    echo "Connection established\n";
-    mysqli_query($connection,$create_user);
+   $query = "select count(*) as count from blood_bank where EmailID='".$data['emailId']."';";
+   $result = mysqli_query($connection,$query);
+   $user_count = mysqli_fetch_array($result)['count'];
+   if($user_count == 0){
+        $query = "select count(*) as count from blood_bank";
+        $result = mysqli_query($connection,$query);
+        $user_count = mysqli_fetch_array($result)['count'];
+       ++$user_count;
+       $query = "insert into blood_bank values".
+       "('".$user_count."','".$data['name']."','".$data['emailId']."','".$data['phoneNo']."',
+       '".$data['address']."','".$data['startDate']."','Open','".$data['password']."');";
+    $result = mysqli_query($connection,$query);
+    echo $result;
+    if($result)
+        echo 1;
+    else
+        echo 0;
+   }else{
+       echo -1;
+   }
 }
 ?>

@@ -1,27 +1,50 @@
-<!-- Modal -->
-<div class="modal fade" id="form_brand" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">New Brand Entry</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form id="update_brand_form" onsubmit="return false">
-            <div class="form-group">
-              <label>Brand Name</label>
-              <input type="hidden" name="bid" id="bid" value=""/>
-              <input type="text" class="form-control" name="update_brand" id="update_brand" aria-describedby="emailHelp" placeholder="Enter email">
-              <small id="brand_error" class="form-text text-muted"></small>
-            </div>
-            <button type="submit" class="btn btn-primary">Update Brand</button>
-        </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<html>
+  <head>
+    <title>Blood Bank</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="../res/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="./stylesheets/update_stock.css">
+    <script src="register_bloodbank.js"></script>
+  </head>
+
+
+  <body onload="onLoad()">
+
+       <div class="Maincontainer">
+		<table class="table">
+  <thead class="table-danger">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">StockID</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody id="get_stock">
+		       <tr>
+		        <td>1</td>
+		        <td>1234</td>
+		        <td>sold</td></b>
+		        <td>
+              	<a href="#" ><img src="../res/edit.png"  width="35" height="30">  </a>
+		        	  <a href="#" ><img src="../res/delete.png"  width="35" height="30"></a>
+		        	
+		        </td>
+		      </tr>
+      
+  </tbody>
+</table>
+	</div>
+  </body>
+</html>
+
+

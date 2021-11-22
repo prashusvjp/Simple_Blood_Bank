@@ -35,9 +35,10 @@
                     placeholder="Enter valid name"
                     required
                   />
+                  <span class='error-span' id="sname-error" style="color:'red'"></span>
                 </div>
 
-                <div class="form-group">
+                
 
                     <div class="form-group">
                         <label for="semail">Email</label>
@@ -48,10 +49,11 @@
                           placeholder="Enter valid email"
                           required
                         />
+                        <span class='error-span' id="smail-error" style="color:'red'"></span>
                         <!-- <small id="emailHelp" class="form-text text-muted"
                     >Your personal details are secure with us.</small> -->
                     </div>
-                  </div>
+                 
 
                   <div class="form-group">
                     <label for="sphone">Phone Number</label>
@@ -62,6 +64,7 @@
                       placeholder="Enter valid phone number"
                       required
                     />
+                    <span class='error-span' id="sphone-error" style="color:'red'"></span>
                   </div>
 
                   <div class="form-group">
@@ -73,6 +76,7 @@
                       placeholder="Enter Address"
                       required
                     />
+                    <span class='error-span' id="saddress-error" style="color:'red'"></span>
                   </div>
 
                   <div class="form-group">
@@ -84,6 +88,7 @@
                       placeholder="Enter the date of birth"
                       required
                     />
+                    <span class='error-span' id="sdate-error" style="color:'red'"></span>
                   </div>
 
                   <div id="doner-gender">
@@ -135,6 +140,7 @@
                       placeholder="Enter the Password"
                       required
                     />
+                    <span class='error-span' id="spassword-error" style="color:'red'"></span>
                   </div>
 
       
@@ -147,11 +153,13 @@
                     placeholder="Re-enter the password"
                     required
                   />
+                  <span class='error-span' id="srepassword-error" style="color:'red'"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="sphoto">Photo (Only .jpg files)</label>
                     <input type="file" class="form-control-file" id="sphoto" accept=".jpg">
+                    <span class='error-span' id="sphoto-error" style="color:'red'"></span>
                   </div>
            
                

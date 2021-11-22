@@ -1,26 +1,27 @@
 #mainLoginCard
 {
   margin: auto;
-  width: 40%;
+  width: 35%;
   padding: 10px;
 }
 
 #submitButton{
-    padding: 20px;
+    padding: 10px;
     display:flex;
 
 }
 
-#bregistration{
+#blogin{
     font-size:20px;
     width:200px;
     margin-left :40px;
+    
 }
 
 #bclear{
     font-size:20px;
     width:200px;
-    margin-left :300px;
+    margin-left :150px;
 }
 
 .form-control:focus {
@@ -28,12 +29,19 @@
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
   }
 
-  #blogin{
+  #bregister{
       display:flex;
-      margin:auto;
-      padding:20px;
+      /* margin:auto; */
+      margin-left :300px;
+      text-align: center;
   }
 
   .card-header{
     background-color: #df4759;
+    text-align: center;
+}
+
+.bregister{
+    text-align: center;
+    padding: 20px;
 }

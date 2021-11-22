@@ -1,5 +1,4 @@
 function onLoad(){
-    console.log("hello")
     // if(document.cookie){
     //     document.getElementsByClassName('content').innerHTML = `
     //     <nav class="navbar navbar-expand-sm bg-danger navbar-dark">
@@ -39,9 +38,12 @@ function onLoad(){
               <li class="nav-item" onclick="onNavbarClick(this)">
                 <a class="nav-link" href="staff_profile.html" >Template</a>
               </li>
+              <li class="nav-item" onclick="onNavbarClick(this)">
+                <a class="nav-link" href="update_stock.html" >Stock</a>
+              </li>
             </ul>
           </nav>
-          <iframe id="frame" src='bloodbank_login.html' style='width:100%; height:95%'></iframe>`    
+          <iframe id="frame" src='login.html' style='width:100%; height:95%'></iframe>`    
     // }
 }
 
