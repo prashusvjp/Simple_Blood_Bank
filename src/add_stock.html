@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./stylesheets/add_stock.css">
     <script type="text/javascript" src='./JS/validation.js'></script>
     <script type="text/javascript" src='./JS/stock.js'></script>
+    
   </head>
 
 
@@ -29,7 +30,7 @@
             <div class="card-body text-danger">
               <form>
                 
-
+                <div class="div_donarid">
                 <div class="form-group">
                     <label for="doner-dob">Doner ID</label>
                     <input
@@ -38,10 +39,22 @@
                       id="doner_id"
                       placeholder="Enter the doner id"
                     />
-                    <span class='error-span' id="did-error" style="color:'red'"></span>
+                    <span class='error-span' id="did-error" style="color:'red'"></span><br>
+                    <button type="button" id="search" class="btn btn-info" onclick="getBloodGroup()">Search</button>
                     </div>
-
- 
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="dname">Doner Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="dname"
+                        placeholder="Doner Name"
+                        readonly
+                      />
+                      <span class='error-span' id="dname-error" style="color:'red'"></span>
+                      </div>
 
                   <div class="form-group">
                     <label for="doner-dob">Arrival Date</label>
@@ -87,7 +100,8 @@
                       
                 </div>
                 <div id="submitButton">
-                    <button type="button" id="stockRegistration" class="btn btn-danger">Submit</button>
+                    <button type="button" id="stockRegistration" class="btn btn-danger" onclick="onStockSubmit()">Submit</button>
+                    
                     <button type="clear" id="sclear" class="btn btn-primary">Clear</button>
                 </div>
 

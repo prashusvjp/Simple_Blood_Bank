@@ -42,3 +42,13 @@
   .card-header{
       background-color: #df4759;
   }
+
+  #search{
+
+    margin-left:200px;
+
+  }
+
+  .div_donarid{
+      display: flex;
+  }

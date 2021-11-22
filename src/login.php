@@ -14,13 +14,13 @@
 
     <link rel="stylesheet" href="./stylesheets/login.css">
     <script type="text/javascript" src="./JS/validation.js"></script>
-    <script type="text/javascript" src="./JS/index.js"></script>
+    <!--<script type="text/javascript" src="./JS/index.js"></script>-->
   </head>
 
 
   <body onload="onLoad()">
 
-      <?php include_once("./templates/header.php"); ?>
+      <?php include_once("./navbar.php"); ?>
 
         <div id="mainLoginCard">
         <div class="card border-danger mb-3">

@@ -6,11 +6,13 @@ mysqli_select_db($connection,"db_blood_bank");
 if($connection->connect_error){
     echo "Connection failed";
 }else{
-    $query = "select Blood_Group as bg from doner where DonerID='".$data['id']."';";
+    $query = "select Blood_Group as bg,Doner_Name as name from doner where DonerID='".$data['id']."';";
     $result = mysqli_query($connection,$query);
-    if($result)
-        echo mysqli_fetch_array($result)['bg'];
-    else
-        echo "";
+    $row = mysqli_fetch_array($result);
+    if($row){
+        echo json_encode($row);
+    }else{
+        echo 0;
+    }
 }
 ?>
