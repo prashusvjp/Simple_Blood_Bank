@@ -8,12 +8,12 @@ mysqli_select_db($connection,"db_blood_bank");
 if($connection->connect_error){
     echo "Connection failed";
 }else{
-    $query = "select count(*) as count from inventory;";
+    $query = "select count(*) as count from requests;";
     $result = mysqli_query($connection,$query);
-    $stock_count = mysqli_fetch_array($result)['count'];
-    ++$stock_count;
-    $query = "insert into inventory values('I".$stock_count."','".$data['date']."','".$data['bgroup']."'
-    ,'".$data['category']."','".$data['bankId']."','".$data['donerId']."','".$data['status']."');";
+    $req_count = mysqli_fetch_array($result)['count'];
+    ++$req_count;
+    $query = "insert into requests values('R".$req_count."','".$data['bgroup']."','".$data['category']."'
+    ,'".$data['quantity']."','".$data['date']."','".$data['status']."','".$data['bankId']."');";
     $result = mysqli_query($connection,$query);
     if($result)
             echo 1;

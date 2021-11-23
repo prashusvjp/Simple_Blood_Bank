@@ -2,7 +2,6 @@ var stockDonerId,arrivalDate,bloodGroup,bloodCategory,stockStatus,stockDonerId_e
 var blood_group='A+'
 
 function onLoad(){
-
     stockDonerId=document.getElementById('doner_id')
     arrivalDate=document.getElementById('arrival_date')
     bloodGroup=document.getElementById('dblood-group')
@@ -72,7 +71,7 @@ function onStockSubmit(){
             request.send(json_data)
             request.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    console.log(this.responseText)
+                    alert(this.responseText)
                 }
             };
     }

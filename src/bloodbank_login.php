@@ -13,67 +13,73 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="./stylesheets/login.css">
-    <script type="text/javascript" src="./JS/validation.js"></script>
-    <script type="text/javascript" src="./JS/index.js"></script>
+    <script type="text/javascript" src='./JS/validation.js'></script>
   </head>
 
 
-  <body onload="onLoad()">
-
-      <?php include_once("./templates/header.php"); ?>
-
+  <body>
+    <div id="content">
         <div id="mainLoginCard">
         <div class="card border-danger mb-3">
-          <div class="card-header">
-           
-            <h3>Login</h3>
-          </div>
-            <div class="modal-body text-danger">
+            <div class="card-header">
+              <h3>Login</h3>
+            </div>
+            <div class="card-body text-danger">
               <form>
 
                 <div class="form-group">
 
                     <div class="form-group">
-                        <label for="loginEmail">Email</label>
+                        <label for="bemail">Email</label>
                         <input
                           type="email"
                           class="form-control"
-                          id="loginEmail"
+                          id="bemail"
                           placeholder="Enter valid email"
                         />
                         <small id="emailHelp" class="form-text text-muted"
                     >We'll never share your email with anyone else.</small>
                     </div>
-                    <span class='error-span' id="mail-error" style="color:'red'"></span>
+                    <span class='error-span' id="bemail-error" style="color:'red'"></span>
                   </div>
 
                   <div class="form-group">
-                    <label for="loginPassword">Password</label>
+                    <label for="bpassword">Password</label>
                     <input
                       type="password"
                       class="form-control"
-                      id="loginPassword"
+                      id="bpassword"
                       placeholder="Enter the Password"
                     />
-                    <span class='error-span' id="password-error" style="color:'red'"></span>
+                    <span class='error-span' id="bpassword-error" style="color:'red'"></span>
+                  </div>
+
+                  <div id="otp" hidden>
+
+                    <label for="loginPassword">OTP</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="loginPassword"
+                      placeholder="Enter the OTP"
+                    />
+                    <span class='error-span' id="otp-error" style="color:'red'"></span>
                   </div>
 
                
                 </div>
                 <div id="submitButton">
-                    <button type="button" id="blogin" class="btn btn-danger" onclick="onLoginSubmit()">Login</button>
-                    <button type="clear" id="bclear" class="btn btn-primary" onclick="clearLoginUI()">Clear</button>
+                    <button type="button" id="bregistration" class="btn btn-danger" onclick="onLoginSubmit()">Login</button>
+                    <button type="clear" id="bclear" class="btn btn-primary">Clear</button>
                 </div>
-                <div class="bregister">
-                Do not have an account? <a href="register_bloodbank.html"> Register here</a>
+                <div id="blogin">
+                Do not have an account? <a href="bloodbank_register.html"> Register here</a>
               </div>
               </form>
-               <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
             </div>
-          </div>  
+          </div>
         </div>
-      </div>
-    <!-- </div> -->
       
     </div>
   </body>

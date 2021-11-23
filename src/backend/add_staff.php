@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 $data = json_decode(file_get_contents('php://input'), true);
 
 $connection = new mysqli("localhost","root","mysql");
@@ -19,7 +20,7 @@ if($connection->connect_error){
        "('S".$user_count."','".$data['bankId']."','".$data['name']."','".$data['emailId']."',
        '".$data['phoneNo']."','".$data['DOB']."','".$data['gender']."',
        '".$data['bgroup']."','".$data['address']."','".$data['password']."','".$data['role']."',
-       '".implode("",$data['photo'])."','".$data['salary']."','Existing');";
+       '".$data['photo']."','".$data['salary']."','Existing');";
         $result = mysqli_query($connection,$query);
         if($result)
             echo 1;

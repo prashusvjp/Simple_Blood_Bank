@@ -86,7 +86,7 @@ function onStaffSubmit(){
                 "password": staffPassword.value,
                 "role" : staffRole.value,
                 "photo" : _base64ToArrayBuffer(data),
-                "salary" : (staffSalary>0)?staffSalary.value:0
+                "salary" : staffSalary.value
             })
             console.log(json_data)
             let request = new XMLHttpRequest();

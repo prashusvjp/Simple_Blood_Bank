@@ -18,6 +18,8 @@
 
 
   <body>
+    
+  <?php include_once("./headers/staffnavbar.php"); ?>
     <div id="content">
         <div id="mainTemplateCard">
         <div class="card border-danger mb-3">

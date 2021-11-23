@@ -52,7 +52,6 @@ function _base64ToArrayBuffer(base64) {
 
 function onDonerSubmit(){
     clearUI()
-    console.log(_base64ToArrayBuffer(data))
     if(isNameValid(donorName,donorName_error) && 
     isEmailValid(donorEmailID,donorEmailID_error) && 
     isPhoneNoValid(donorPhoneNo,donorPhoneNo_error) &&
@@ -75,19 +74,18 @@ function onDonerSubmit(){
                 "address" : donorAddress.value,
                 "photo" : _base64ToArrayBuffer(data)
             }))
-            
+            console.log(_base64ToArrayBuffer(data))
             request.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                 res = Number(this.responseText)
                 console.log(this.responseText)
-                if(res > 0)
+                if(res == 1)
                         alert("User created succesfully")
                 else{ 
                     if(res < 0){
                         donorEmailID.focus()
                         document.getElementById('bemail-error').innerText = "Doner already exists"
-                    }else
-                        alert("Sorry, something went wrong please try again later")
+                    }
                 }
                 }
             };

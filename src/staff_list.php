@@ -17,7 +17,9 @@
   </head>
 
 
-  <body onload="onLoad()">
+  <body>
+
+  <?php include_once("./headers/staffnavbar.php"); ?>
 
        <div class="Maincontainer">
 		<table class="table table-bordered">

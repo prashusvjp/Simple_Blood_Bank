@@ -119,7 +119,7 @@
                     <button type="clear" id="bclear" class="btn btn-primary" onclick="onClear()">Clear</button>
                 </div>
                 <div id="blogin">
-                Already have an account? <a href="login.html">Login here</a>
+                Already have an account? <a href="login.php">Login here</a>
               </div>
               </form>
               <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->

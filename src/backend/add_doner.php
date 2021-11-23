@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 $data = json_decode(file_get_contents('php://input'), true);
 
 $connection = new mysqli("localhost","root","mysql");
@@ -18,15 +19,15 @@ if($connection->connect_error){
        $query = "insert into doner values".
        "('D".$user_count."','".$data['name']."','".$data['emailId']."',
        '".$data['phoneNo']."','".$data['DOB']."','".$data['gender']."',
-       '".$data['bgroup']."','".$data['address']."','".implode("",$data['photo'])."');";
+       '".$data['bgroup']."','".$data['address']."','".$data['photo']."');";
         $result = mysqli_query($connection,$query);
         if($result)
             echo 1;
         else
-            echo $connection->error;
+            echo 0;
    }else{
        echo -1;
    }
-   
 }
+mysqli_close($connection)
 ?>

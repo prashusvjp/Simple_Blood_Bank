@@ -20,7 +20,7 @@
 
   <body onload="onLoad()">
 
-      <?php include_once("./navbar.php"); ?>
+      <?php include_once("./headers/loginheader.php"); ?>
 
         <div id="mainLoginCard">
         <div class="card border-danger mb-3">
@@ -65,7 +65,7 @@
                     <button type="clear" id="bclear" class="btn btn-primary" onclick="clearLoginUI()">Clear</button>
                 </div>
                 <div class="bregister">
-                Do not have an account? <a href="register_bloodbank.html"> Register here</a>
+                Do not have an account? <a href="register_bloodbank.php"> Register here</a>
               </div>
               </form>
                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
