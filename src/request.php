@@ -55,13 +55,23 @@
                       <div class="form-group">
                       <label for="quantity">Quantity</label>
                       <input
-                        type="text"
+                        type="number"
                         class="form-control"
                         id="quantity"
                         placeholder="Enter the quantity"
-                        readonly
                       />
                       <span class='error-span' id="quantity-error" style="color:'red'"></span>
+                      </div>
+
+                      <div class="form-group">
+                      <label for="rdate">Request Date</label>
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="rdate"
+                        readonly
+                      />
+                      <span class='error-span' id="rdate-error" style="color:'red'"></span>
                       </div>
 
       

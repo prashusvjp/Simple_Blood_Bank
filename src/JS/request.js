@@ -1,0 +1,3 @@
+var requestBloodGroup,requestBloodCategory,requestQuantity,requestDate
+
+function onLoad()

@@ -7,6 +7,11 @@ function isEmailValid(element,error_element){
     return false
 }
 
+function getBankIdFromCookie(){
+    cookie = document.cookie
+    cookie = cookie.split("=")
+    return (cookie[0] == 'bankId')?cookie[1]:null
+}
 
 function isPhoneNoValid(element,error_element){
     if((element.value).length == 10)
