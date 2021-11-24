@@ -109,5 +109,6 @@
         </div>
       
     </div>
+    <?php include_once("./headers/footer.php"); ?> 
   </body>
 </html>

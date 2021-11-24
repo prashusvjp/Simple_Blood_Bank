@@ -13,5 +13,6 @@
     <body onload="onLoad()">
 
     <?php include_once("./headers/homenavbar.php"); ?>
+    <?php include_once("./footer.php"); ?> 
     </body>
 </html>

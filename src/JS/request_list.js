@@ -8,7 +8,6 @@ function getBankIdFromCookie(){
 
 function onEditClick(values){
     selected_values = values
-    
     updateRID.value = selected_values.RequestID
     updateBloodGroup.value = selected_values.Blood_Group
     updateBloodCategory.value = selected_values.Category
@@ -98,7 +97,7 @@ function onSaveChanges(){
             "category" : updateBloodCategory.value,
             "quantity" : updateQuantity.value,
         }))
-    }
+    
          
         request.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -112,6 +111,7 @@ function onSaveChanges(){
             }
         }
     }
+}
 
 function onLoad(){
     

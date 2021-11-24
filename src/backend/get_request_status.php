@@ -16,26 +16,26 @@ if($connection->connect_error){
     $anArray = array("RBC"=>0,"WBC"=>0,"Platelets"=>0,"Plasma"=>0);
     $abArray = array("RBC"=>0,"WBC"=>0,"Platelets"=>0,"Plasma"=>0);
     $abnArray = array("RBC"=>0,"WBC"=>0,"Platelets"=>0,"Plasma"=>0);
-    $query="select Blood_Group,Category from inventory where Status='In-stock' and BankID='".$data['bankId']."';";
+    $query="select Blood_Group,Category,Quantity from requests where Status='Pending' and Requesting_BankID='".$data['bankId']."';";
     $result =  mysqli_query($connection,$query);
     while($row = mysqli_fetch_assoc($result)){
        switch($row['Blood_Group']){
            case "A+":
-                $aArray[$row['Category']] += 1;break;
+                $aArray[$row['Category']] += $row['Quantity'];break;
             case "B+":
-                $bArray[$row['Category']] += 1;break;
+                $bArray[$row['Category']] += $row['Quantity'];break;
             case "AB+":
-                $abArray[$row['Category']] += 1;break;
+                $abArray[$row['Category']] += $row['Quantity'];break;
             case "O+":
-                $oArray[$row['Category']] += 1;break;
+                $oArray[$row['Category']] += $row['Quantity'];break;
             case "A-":
-                $anArray[$row['Category']] += 1;break;
+                $anArray[$row['Category']] += $row['Quantity'];break;
             case "B-":
-                $bnArray[$row['Category']] += 1;break;
+                $bnArray[$row['Category']] += $row['Quantity'];break;
             case "AB-":
-                $abnArray[$row['Category']] += 1;break;
+                $abnArray[$row['Category']] += $row['Quantity'];break;
             case "O-":
-                $onArray[$row['Category']] += 1;break;
+                $onArray[$row['Category']] += $row['Quantity'];break;
             
        }
     }
