@@ -21,6 +21,8 @@
 
 
   <body onload="onLoad()">
+
+  <?php include_once("./headers/stocknavbar.php"); ?>
     <div id="content">
         <div id="stockMainCard">
         <div class="card border-danger mb-3">

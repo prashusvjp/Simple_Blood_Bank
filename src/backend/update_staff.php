@@ -9,9 +9,9 @@ if($connection->connect_error){
     echo "Connection failed";
 }else{
     $query = "update bank_staff 
-    set(Staff_Name='".$data['name']."',PhoneNo='".$data['phoneNo']."',
+    set(EmailID='".$data['emailId']."',Staff_Name='".$data['name']."',PhoneNo='".$data['phoneNo']."',
     Gender='".$data['gender']."',Address='".$data['address']."',Role='".$data['role']."',
-    salary='".$data['salary']."',status='".$data['status']."',Photo='".$data['photo']."');";
+    salary='".$data['salary']."',status='".$data['status']."',Photo='".$data['photo']."') where StaffID='".$data['staffId']";";
     $result = mysqli_query($connection,$query);
     if($result)
         echo 1;

@@ -25,7 +25,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="add_staff.php">Add Staff</a>
           <a class="dropdown-item" href="staff_list.php">Update Staff</a>
-           <a class="dropdown-item" href="staff_profile.php">Staff Profile</a>
+           
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

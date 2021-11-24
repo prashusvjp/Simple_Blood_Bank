@@ -18,6 +18,8 @@
 
 
   <body>
+
+  <?php include_once("./headers/staffnavbar.php"); ?>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
   Launch demo modal

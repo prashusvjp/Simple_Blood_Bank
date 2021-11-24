@@ -28,17 +28,6 @@ function getBankIdFromCookie(){
     return (cookie[0] == 'bankId')?cookie[1]:null
 }
 
-
-function _base64ToArrayBuffer(base64) {
-    var binary_string = window.atob(base64);
-    var len = binary_string.length;
-    var bytes = new Uint8Array(len);
-    for (var i = 0; i < len; i++) {
-        bytes[i] = binary_string.charCodeAt(i);
-    }
-    return bytes.buffer;
-}
-
 function onGenderChange(element){
     switch(element.value){
         case 'male':
@@ -85,7 +74,7 @@ function onStaffSubmit(){
                 "address" : staffAddress.value,
                 "password": staffPassword.value,
                 "role" : staffRole.value,
-                "photo" : _base64ToArrayBuffer(data),
+                "photo" : data,
                 "salary" : staffSalary.value
             })
             console.log(json_data)

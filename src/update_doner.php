@@ -19,6 +19,8 @@
 
   <body onload="onLoad()">
 
+  <?php include_once("./headers/donernavbar.php"); ?>
+
        <div class="Maincontainer">
 		<table class="table table-bordered">
   <thead class=" table-danger">

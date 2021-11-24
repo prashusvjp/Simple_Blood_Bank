@@ -13,12 +13,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="./stylesheets/add_doner.css">
-    <script src="./JS/doner.js"></script>
     <script src="./JS/validation.js"></script>
+    <script src="./JS/doner.js"></script>
   </head>
 
 
   <body onload="onLoad()">
+
+   <?php include_once("./headers/donernavbar.php"); ?>
     <div id="content">
         <div id="donarMainCard">
         <div class="card border-danger mb-3">
@@ -92,11 +94,11 @@
                       Gender :
                       </label>
                       <div id="gender-radio">
-                      <input type="radio" id="dmale" name="dgender" value="male" checked>
+                      <input type="radio" id="dmale" name="dgender" value="male" onclick='onGenderChange(this)' checked>
                         <label for="dmale">Male</label>&nbsp
-                        <input type="radio" id="dfemale" name="dgender" value="female">
+                        <input type="radio" id="dfemale" name="dgender" value="female" onclick='onGenderChange(this)'>
                         <label for="dfemale">Female</label>&nbsp
-                        <input type="radio" id="dothers" name="dgender" value="others">
+                        <input type="radio" id="dothers" name="dgender" value="others" onclick='onGenderChange(this)'>
                       <label for="dothers">Others</label>
                       </div>
                       </div>

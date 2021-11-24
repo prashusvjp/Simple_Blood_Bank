@@ -39,17 +39,6 @@ function clearUI(){
     donorDOB_error.innerText= ''
 }
 
-
-function _base64ToArrayBuffer(base64) {
-    var binary_string = window.atob(base64);
-    var len = binary_string.length;
-    var bytes = new Uint8Array(len);
-    for (var i = 0; i < len; i++) {
-        bytes[i] = binary_string.charCodeAt(i);
-    }
-    return bytes.buffer;
-}
-
 function onDonerSubmit(){
     clearUI()
     if(isNameValid(donorName,donorName_error) && 
@@ -72,8 +61,9 @@ function onDonerSubmit(){
                 "gender" : gender,
                 "bgroup" : donorBloodGroup.value,
                 "address" : donorAddress.value,
-                "photo" : _base64ToArrayBuffer(data)
+                "photo" : data
             }))
+            
             console.log(_base64ToArrayBuffer(data))
             request.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {

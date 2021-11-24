@@ -19,6 +19,8 @@
 
 
   <body onload="onLoad()">
+
+      <?php include_once("./headers/staffnavbar.php"); ?>
     <div id="content">
         <div id="staffMainCard">
         <div class="card border-danger mb-3">
@@ -97,11 +99,11 @@
                     Gender :
                     </label>
                     <div id="gender-radio">
-                    <input type="radio" id="smale" name="sgender" value="male" checked>
+                    <input type="radio" id="smale" name="sgender" value="male" onclick='onGenderChange(this)' checked>
                         <label for="smale">Male</label>&nbsp
-                        <input type="radio" id="sfemale" name="sgender" value="female" checked>
+                        <input type="radio" id="sfemale" name="sgender" onclick='onGenderChange(this)' value="female">
                         <label for="sfemale">Female</label>&nbsp
-                      <input type="radio" id="sothers" name="sgender" value="others">
+                      <input type="radio" id="sothers" name="sgender" onclick='onGenderChange(this)' value="others">
                       <label for="sothers">Others</label>
                     </div>
                     </div>

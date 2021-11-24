@@ -19,6 +19,8 @@
 
   <body onload="onLoad()">
 
+  <?php include_once("./headers/stocknavbar.php"); ?>
+
        <div class="Maincontainer">
 		<table class="table">
   <thead class="table-danger">
