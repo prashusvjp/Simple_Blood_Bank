@@ -110,7 +110,6 @@ function onSaveChanges(){
         request.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 console.log(this.responseText)
-
                 if(this.responseText == 1){
                     alert('Updated succesfully');
                     getContents()

@@ -13,7 +13,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="./stylesheets/staff_list.css">
-    <script src="register_bloodbank.js"></script>
+    <script src="./JS/validation.js"></script>
+    <script src="./JS/doner_list.js"></script>
   </head>
 
 
@@ -28,39 +29,8 @@
     width: 50%;"></img>
 
        <div class="Maincontainerdoner">
-		<table class="table table-bordered">
-  <thead class=" table-danger">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nama</th>
-      <th scope="col">Email</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Address</th>
-      <th scope="col">DOB</th>
-      <th scope="col">Gender</th>
-      <th scope="col">Bloodgroup</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody id="get_stock">
-		        <tr>
-		        <td>1</td>
-		        <td>Prashanth S</td>
-		        <td>prashusvjp@gmail.com</td></b>
-		        <td>9112345678</td>
-                <td>bangalore</td>
-                <td>21-08-2001</td>
-                <td>Male</td>
-                <td>A+</td>
-                <td>
-              	<a href="#"  data-toggle="modal" data-target="#exampleModalScrollable" ><img src="../res/edit.png"  width="35" height="30">  </a>
-		        	
-		        </td>
-		      </tr> 
-      
-  </tbody>
-</table>
-	</div>
+       <table class="table table-bordered" id="doner_table"></table>
+    	</div>
 
 
    <!-- Model -->
@@ -68,7 +38,7 @@
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">Update Staff Details</h5>
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Update Doner Details</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -130,11 +100,11 @@
                     Gender :
                     </label>
                     <div id="gender-radio">
-                    <input type="radio" id="smale" name="sgender" value="male" checked onclick='onGenderChange(this)'>
+                    <input type="radio" id="dmale" name="dgender" value="male" checked onclick='onGenderChange(this)'>
                         <label for="smale">Male</label>&nbsp
-                        <input type="radio" id="sfemale" name="sgender" value="female" onclick='onGenderChange(this)'>
+                        <input type="radio" id="dfemale" name="dgender" value="female" onclick='onGenderChange(this)'>
                         <label for="sfemale">Female</label>&nbsp
-                      <input type="radio" id="sothers" name="sgender" value="others" onclick='onGenderChange(this)'>
+                      <input type="radio" id="dothers" name="dgender" value="others" onclick='onGenderChange(this)'>
                       <label for="sothers">Others</label>
                     </div>
                     </div>

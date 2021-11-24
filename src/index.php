@@ -13,8 +13,5 @@
     <body onload="onLoad()">
 
     <?php include_once("./headers/homenavbar.php"); ?>
-
-        <div id="content"> 
-        </div>
     </body>
 </html>

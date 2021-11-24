@@ -13,11 +13,12 @@ if($connection->connect_error){
     $req_count = mysqli_fetch_array($result)['count'];
     ++$req_count;
     $query = "insert into requests values('R".$req_count."','".$data['bgroup']."','".$data['category']."'
-    ,'".$data['quantity']."','".$data['date']."','".$data['status']."','".$data['bankId']."');";
+    ,'".$data['quantity']."','".$data['date']."','Pending','".$data['bankId']."');";
     $result = mysqli_query($connection,$query);
     if($result)
             echo 1;
         else
             echo $connection->error;
 }
+mysqli_close($connection)
 ?>

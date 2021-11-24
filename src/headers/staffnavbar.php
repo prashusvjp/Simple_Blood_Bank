@@ -17,6 +17,9 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="add_stock.php">Add Stock</a>
           <a class="dropdown-item" href="update_stock.php">Update Stock</a>
+          <hr>
+          <a class="dropdown-item" href="request.php">Add Request</a>
+          <a class="dropdown-item" href="update_request.php">Update Request</a>
       </li >
       <li class="nav-item active dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

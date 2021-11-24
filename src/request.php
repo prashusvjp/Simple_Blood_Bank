@@ -13,12 +13,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="./stylesheets/add_doner.css">
-    <script src="./JS/doner.js"></script>
+    <script src="./JS/request.js"></script>
     <script src="./JS/validation.js"></script>
   </head>
 
 
   <body onload="onLoad()">
+  <?php include_once("./headers/stocknavbar.php"); ?>
     <div id="content">
         <div id="donarMainCard">
         <div class="card border-danger mb-3">
@@ -58,7 +59,8 @@
                         type="number"
                         class="form-control"
                         id="quantity"
-                        placeholder="Enter the quantity"
+                        value='1'
+                        placeholder="1"
                       />
                       <span class='error-span' id="quantity-error" style="color:'red'"></span>
                       </div>
@@ -69,7 +71,7 @@
                         type="date"
                         class="form-control"
                         id="rdate"
-                        readonly
+                        value="<?php echo date("Y-d-m"); ?>"
                       />
                       <span class='error-span' id="rdate-error" style="color:'red'"></span>
                       </div>
@@ -78,7 +80,7 @@
                
                 </div>
                 <div id="submitButton">
-                    <button type="button" id="request" class="btn btn-danger" onclick=''>Submit</button>
+                    <button type="button" id="request" class="btn btn-danger" onclick='onRequestSubmit()'>Submit</button>
                     <button type="clear" id="bclear" class="btn btn-primary">Clear</button>
                 </div>
                 

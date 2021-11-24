@@ -6,9 +6,9 @@ mysqli_select_db($connection,"db_blood_bank");
 if($connection->connect_error){
     echo "Connection failed";
 }else{
-    $query = "update doner
-    set EmailID='".$data['emailId']."', Gender='".$data['gender']."',PhoneNo='".$data['phoneNo']."',
-    Doner_Name='".$data['name']."',Address='".$data['address']."', Photo='".$data['photo']."' where DonerID='".$data['donerId']."';";
+    $query = "update request 
+    set Blood_Group='".$data['bgroup']."', Category='".$data['category']."',
+    Quantity='".$data['status']."' where RequestID='".$data['requestId']."';";
     $result = mysqli_query($connection,$query);
     if($result)
         echo 1;

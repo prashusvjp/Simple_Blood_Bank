@@ -64,7 +64,6 @@ function onDonerSubmit(){
                 "photo" : data
             }))
             
-            console.log(_base64ToArrayBuffer(data))
             request.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                 res = Number(this.responseText)
