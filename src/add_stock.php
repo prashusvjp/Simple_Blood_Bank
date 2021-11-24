@@ -33,7 +33,7 @@
               <form>
 
               <div class="form-group">
-                      <label for="doner_id">Doner ID</label>
+                      <label for="doner_id">Stock ID</label>
                       <input
                         type="text"
                         class="form-control"
@@ -44,21 +44,6 @@
                       <button type="button" id="search" class="btn btn-info" onclick="getBloodGroup()">Search</button>
                       </div>
 
-                
-                <!-- <div class="div_donarid">
-                <div class="form-group">
-                    <label for="doner-dob">Doner ID</label>
-                    <input
-                      type="search"
-                      class="form-control"
-                      id="doner_id"
-                      placeholder="Enter the doner id"
-                    />
-                    <span class='error-span' id="did-error" style="color:'red'"></span><br>
-                    <button type="button" id="search" class="btn btn-info" onclick="getBloodGroup()">Search</button>
-                    </div>
-                    </div>
-                   -->
                     <div class="form-group">
                       <label for="dname">Doner Name</label>
                       <input
@@ -108,11 +93,6 @@
                           <option>Sold</option> {% endcomment %}
                         </select>
                       </div>
-
-                      
-
-      
-                      
                 </div>
                 <div id="submitButton">
                     <button type="button" id="stockRegistration" class="btn btn-danger" onclick="onStockSubmit()">Submit</button>

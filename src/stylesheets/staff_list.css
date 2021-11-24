@@ -1,8 +1,7 @@
 .Maincontainer{
-    width:100;
-    margin:auto;
+    width:97%;
     margin-top:20px;
-
+    margin-left:20px;
 }
 
 table td {
@@ -15,5 +14,13 @@ tr, th {
 }
 
 .nodataimg{
-    margin-left:240px;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.Maincontainerdoner{
+    width:90%;
+    margin-top:20px;
+    margin-left:70px;
+
 }

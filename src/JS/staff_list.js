@@ -1,8 +1,8 @@
 var  staff_table,contents,image,data,updatePhoto,updateName,updatePhone,updateGender,updateAddress,updateRole,updateStatus,gender='M'
 var updateEmail,updatestaffId,updateEmailError,updatestaffIdError,updateNameError,updatePhoneError,updateAddressError,updateSalaryError,selected_values
 
-function onEditClick(id){
-    selected_values = data[id]
+function onEditClick(values){
+    selected_values = values
     image.src = "data:image/jpg;base64,"+selected_values.Photo
     updateEmail.value = selected_values.EmailID
     updatestaffId.value = selected_values.StaffID
@@ -78,7 +78,7 @@ function getContents(){
                     <td>`+ element.Role +`</td>
                     <td>`+ element.salary +`</td>
                     <td>
-                        <a data-toggle="modal" data-target="#exampleModalScrollable" id='`+ count +`' onclick='onEditClick(this.id)'><img src="../res/edit.png"  width="35" height="30"></a>
+                        <a data-toggle="modal" data-target="#exampleModalScrollable" id='`+ count +`' onclick='onEditClick(data[this.id])'><img src="../res/edit.png"  width="35" height="30"></a>
                     </td>
                     </tr>    
                     </tbody>
@@ -93,7 +93,7 @@ function getContents(){
 function onSaveChanges(){
     salary = (updateSalary.value=='')?0:updateSalary.value
     if(isPhoneNoValid(updatePhone,updatePhoneError) && isNameValid(updateName,updateNameError) &&
-    isAddressValid(updateAddress,updateAddressError && isEmailValid(updateEmail,updateEmailError))){
+    isAddressValid(updateAddress,updateAddressError) && isEmailValid(updateEmail,updateEmailError)){
         let request = new XMLHttpRequest();
         request.open("POST",'./backend/update_staff.php',true)
         request.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
@@ -108,13 +108,14 @@ function onSaveChanges(){
                 "phoneNo": updatePhone.value,
                 "gender": gender,
                 "role": updateRole.value,
-                "salary": updateStatus.value,
+                "salary": updateSalary.value,
                 "status": updateStatus.value,
                 "address": updateAddress.value,
                 "photo":data
             }))
-            reader.readAsDataURL(updatePhoto.files[0])      
-        }}else{
+         }
+         reader.readAsDataURL(updatePhoto.files[0])
+    }else{
             request.send(JSON.stringify({
                 "staffId":updatestaffId.value,
                 "emailId":updateEmail.value,
@@ -122,7 +123,7 @@ function onSaveChanges(){
                 "phoneNo": updatePhone.value,
                 "gender": gender,
                 "role": updateRole.value,
-                "salary": updateStatus.value,
+                "salary": updateSalary.value,
                 "status": updateStatus.value,
                 "address": updateAddress.value,
                 "photo": selected_values.Photo
@@ -130,17 +131,33 @@ function onSaveChanges(){
         }
         request.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                if(this.responseText == 1)
+                console.log(this.responseText,1)
+                if(this.responseText == 1){
+                    getContents()
                     alert('Updated succesfully');
+                }
                 else
-                    alert('Sorry, something went wrong')
+                    alert('Sorry, something went wrong',this.responseText)
             }
         }
     }
 }
 
-function onLoad(){
+function onGenderChange(element){
+    switch(element.value){
+        case 'male':
+            gender='M'
+            break;
+        case 'female':
+            gender='F'
+            break;   
+        case 'others':
+            gender='O'
+            break;
+    }
+}
 
+function onLoad(){
     updatePhoto=document.getElementById('updatePhoto')
     updateName=document.getElementById('updateName')
     updatePhone=document.getElementById('updatePhone')

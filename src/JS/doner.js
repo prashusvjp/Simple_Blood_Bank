@@ -18,7 +18,7 @@ function onLoad(){
 }
 
 function onGenderChange(element){
-    switch(element.target.value){
+    switch(element.value){
         case 'male':
             gender='M'
             break;

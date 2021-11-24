@@ -13,3 +13,10 @@ tr, th {
     padding: 5px;
     text-align: center;
 }
+
+.nodataimg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}

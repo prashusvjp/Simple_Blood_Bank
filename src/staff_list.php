@@ -21,31 +21,17 @@
   <body onload='onLoad()'>
 
   <?php include_once("./headers/staffnavbar.php"); ?>
-  <div class="nodataimg">
-  <img src='../res/nodata.png' id='nodata' style="display:'block',margin-left:'auto',margin-right:'auto',width'50%'"></img>
-</div>
-       <div class="Maincontainer">
-		<table class="table table-bordered" id="staff_table">
-  <thead class=" table-danger">
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Address</th>
-      <th scope="col">DOB</th>
-      <th scope="col">Gender</th>
-      <th scope="col">Bloodgroup</th>
-      <th scope="col">Role</th>
-      <th scope="col">Salary</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-</table>
+  <img src='../res/nodata.png' id='nodata' class='nodataimg' style="display: block;
+    margin-left: auto;
+    margin-top:100px;
+    margin-right:auto;
+    width: 50%;"></img>
+  <div class="Maincontainer">
+		<table class="table table-bordered" id="staff_table"></table>
 	</div>
 
 
-   <!-- Modal -->
+   <!-- Model -->
 <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
@@ -112,11 +98,11 @@
                     Gender :
                     </label>
                     <div id="gender-radio">
-                    <input type="radio" id="smale" name="sgender" value="male" checked>
+                    <input type="radio" id="smale" name="sgender" value="male" checked onclick='onGenderChange(this)'>
                         <label for="smale">Male</label>&nbsp
-                        <input type="radio" id="sfemale" name="sgender" value="female">
+                        <input type="radio" id="sfemale" name="sgender" value="female" onclick='onGenderChange(this)'>
                         <label for="sfemale">Female</label>&nbsp
-                      <input type="radio" id="sothers" name="sgender" value="others">
+                      <input type="radio" id="sothers" name="sgender" value="others" onclick='onGenderChange(this)'>
                       <label for="sothers">Others</label>
                     </div>
                     </div>
@@ -176,7 +162,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="onSaveChanges()">Save changes</button>
+        <button type="button" class="btn btn-danger" onclick="onSaveChanges()">Save changes</button>
       </div>
     </div>
   </div>
