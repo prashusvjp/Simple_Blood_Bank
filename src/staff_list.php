@@ -164,7 +164,7 @@
 
 
                 <div class="form-group">
-                    <label for="updatephoto">Photo (Only .jpg files)</label>
+                    <label for="updatePhoto">Photo (Only .jpg files)</label>
                     <input type="file" class="form-control-file" id="updatePhoto" accept=".jpg">
                     <span class='error-span' id="updatephoto-error" style="color:'red'"></span>
                   </div> 

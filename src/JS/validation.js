@@ -97,11 +97,13 @@ function onLoginSubmit(){
         request.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
             res = Number(this.responseText)
-            console.log(res,this.responseText)
             if(res == 0)
                 document.getElementById("password-error").innerText="Incorrect username/password"
-            else
+            else{
+                console.log(res,this.responseText)
+                alert("Log In Successful")
                 document.cookie='bankId='+this.responseText
+            }  
             }
         };
     }

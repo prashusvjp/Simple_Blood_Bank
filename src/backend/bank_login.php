@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 $data = json_decode(file_get_contents('php://input'), true);
 
 $connection = new mysqli("localhost","root","mysql");

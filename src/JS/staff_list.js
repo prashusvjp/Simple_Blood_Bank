@@ -141,7 +141,7 @@ function onSaveChanges(){
 
 function onLoad(){
 
-    updatePhoto=document.getElementById('updatephoto')
+    updatePhoto=document.getElementById('updatePhoto')
     updateName=document.getElementById('updateName')
     updatePhone=document.getElementById('updatePhone')
     updateAddress=document.getElementById('updateAddress')
