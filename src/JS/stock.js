@@ -71,7 +71,7 @@ function onStockSubmit(){
             request.send(json_data)
             request.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    alert(this.responseText)
+                    alert("Stock added to the database")
                 }
             };
     }

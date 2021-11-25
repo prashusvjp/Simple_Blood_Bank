@@ -11,6 +11,7 @@ function onEditClick(values){
 }
 
 function getBankIdFromCookie(){
+    cookie=''
     cookie = document.cookie
     cookie = cookie.split("=")
     return (cookie[0] == 'bankId')?cookie[1]:null
@@ -65,6 +66,7 @@ function getContents(){
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
         res = this.responseText
+        console.log(this.responseText)
         if(res == 0){
             stock_table.style.display = "none";
             nodata_img.style.display = "block";

@@ -27,7 +27,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="add_staff.php">Add Staff</a>
-          <a class="dropdown-item" href="staff_list.php">Update Staff</a>
+          <a class="dropdown-item" href="update_staff.php">Update Staff</a>
            
       </li>
       <li class="nav-item dropdown">

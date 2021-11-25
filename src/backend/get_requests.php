@@ -7,7 +7,7 @@ mysqli_select_db($connection,"db_blood_bank");
 if($connection->connect_error){
     echo "Connection failed";
 }else{
-    $query = "select * from requests;";
+    $query = "select * from requests from Requesting_BankID='".$data['bankId']."';";
     $result = mysqli_query($connection,$query);
     $data = array();
     while($row =mysqli_fetch_assoc($result))

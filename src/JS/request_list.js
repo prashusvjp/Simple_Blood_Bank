@@ -34,7 +34,7 @@ function getContents(){
         if (this.readyState == 4 && this.status == 200) {
         res = this.responseText
         if(res == 0){
-            doner_table.style.display = "none";
+            request_table.style.display = "none";
             nodata_img.style.display = "block";
         }else{ 
             request_table.style.display = "";

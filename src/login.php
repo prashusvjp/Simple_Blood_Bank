@@ -14,11 +14,10 @@
 
     <link rel="stylesheet" href="./stylesheets/login.css">
     <script type="text/javascript" src="./JS/validation.js"></script>
-    <!--<script type="text/javascript" src="./JS/index.js"></script>-->
   </head>
 
 
-  <body onload="onLoad()">
+  <body>
 
       <?php include_once("./headers/loginheader.php"); ?>
 
@@ -41,8 +40,6 @@
                           id="loginEmail"
                           placeholder="Enter valid email"
                         />
-                        <small id="emailHelp" class="form-text text-muted"
-                    >We'll never share your email with anyone else.</small>
                     </div>
                     <span class='error-span' id="mail-error" style="color:'red'"></span>
                   </div>
@@ -76,7 +73,6 @@
     <!-- </div> -->
       
     </div>
-    <?php include_once("./footer.php"); ?> 
   </body>
 </html>
 

@@ -12,20 +12,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="./stylesheets/update_staff.css">
-    <script src="register_bloodbank.js"></script>
+    <link rel="stylesheet" href="./stylesheets/staff_list.css">
+    <script src="./JS/validation.js"></script>
+    <script src="./JS/staff_list.js"></script>
   </head>
 
 
-  <body>
+  <body onload='onLoad()'>
 
   <?php include_once("./headers/staffnavbar.php"); ?>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
-  Launch demo modal
-</button>
+  <img src='../res/nodata.png' id='nodata' class='nodataimg' style="display: block;
+    margin-left: auto;
+    margin-top:100px;
+    margin-right:auto;
+    width: 50%;"></img>
+  <div class="Maincontainer">
+		<table class="table table-bordered" id="staff_table"></table>
+	</div>
 
-<!-- Modal -->
+
+   <!-- Model -->
 <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
@@ -40,7 +46,7 @@
       <div class="mainUpdatediv">
       <form>
                     <div class="imageDiv">
-                        <img src="../res/profile_image.png" class="rounded-circle" alt="Cinque Terre" width="170" height="170">
+                        <img src="../res/profile_image.png" id='sphoto' class="rounded-circle" alt="Cinque Terre" width="170" height="170">
                     </div>
                     <div class="contentDiv">
                     <form>
@@ -61,7 +67,6 @@
                     type="text"
                     class="form-control"
                     id="semail"
-                    readonly
                   />
                   <span class='error-span' id="semail-error" style="color:'red'"></span>
                 </div>
@@ -89,15 +94,15 @@
                 </div>
 
                 <div id="doner-gender">
-                    <label  for="gender">
+                    <label  for="updateGender">
                     Gender :
                     </label>
                     <div id="gender-radio">
-                    <input type="radio" id="smale" name="sgender" value="male" checked>
+                    <input type="radio" id="smale" name="sgender" value="male" checked onclick='onGenderChange(this)'>
                         <label for="smale">Male</label>&nbsp
-                        <input type="radio" id="sfemale" name="sgender" value="female" checked>
+                        <input type="radio" id="sfemale" name="sgender" value="female" onclick='onGenderChange(this)'>
                         <label for="sfemale">Female</label>&nbsp
-                      <input type="radio" id="sothers" name="sgender" value="others">
+                      <input type="radio" id="sothers" name="sgender" value="others" onclick='onGenderChange(this)'>
                       <label for="sothers">Others</label>
                     </div>
                     </div>
@@ -108,7 +113,7 @@
                     type="text"
                     class="form-control"
                     id="updateAddress"
-                    placeholder="Enter New Phone Address"
+                    placeholder="Enter New Address"
                   />
                   <span class='error-span' id="updateAddress-error" style="color:'red'"></span>
                 </div>
@@ -130,13 +135,14 @@
                     class="form-control"
                     id="updateSalary"
                     placeholder="Enter New Salary"
+                    value=0
                   />
                   <span class='error-span' id="updateSalary-error" style="color:'red'"></span>
                 </div>
 
                 <div class="form-group">
-                        <label for="update-status">Status</label>
-                        <select class="form-control" id="update-status">
+                        <label for="updatestatus">Status</label>
+                        <select class="form-control" id="updatestatus">
                           <option>Existing</option>
                           <option>EX-employee</option>
                         </select>
@@ -144,10 +150,10 @@
 
 
                 <div class="form-group">
-                    <label for="updatephoto">Photo (Only .jpg files)</label>
-                    <input type="file" class="form-control-file" id="updatephoto" accept=".jpg">
+                    <label for="updatePhoto">Photo (Only .jpg files)</label>
+                    <input type="file" class="form-control-file" id="updatePhoto" accept=".jpg">
                     <span class='error-span' id="updatephoto-error" style="color:'red'"></span>
-                  </div>
+                  </div> 
 
 
     </form>
@@ -156,12 +162,15 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-danger" onclick="onSaveChanges()">Save changes</button>
       </div>
     </div>
   </div>
 </div>
 
-<?php include_once("./footer.php"); ?> 
-</body>
+
+
+  </body>
 </html>
+
+

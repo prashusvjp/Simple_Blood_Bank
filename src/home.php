@@ -35,7 +35,7 @@
                  
                 </table>
                 <br><br>
-                <a href="./update_stock.php" class="btn btn-danger">View Inventory</a>
+                <a href="./update_stock.php" class="btn btn-primary">View Inventory</a>
             </div>
             </div>
             </td>
@@ -47,7 +47,7 @@
                 <table id="request_table" style="width:100%;margin-left:auto;margin-right:auto;">
                 </table>
                 <br><br>
-                <a href="#" class="btn btn-danger">Requests</a>
+                <a href="./update_request.php" class="btn btn-primary">Requests</a>
             </div>
             </div>
             </td>
@@ -57,13 +57,152 @@
               <div class='card' style="width:95%;margin-left:auto;margin-right:auto;margin-top:30px">
                 <div class="card-body">
                 <h5 class="card-title">Servicable requests</h5>
-                  <table id='request_table' id="serviceable_table" style="width:100%"></table>
+                <center><h6 id='nodata'><br><br>Sorry, No requests found :(<br><br></h6></center>
+                  <table id="serviceable_table" style="width:100%;text-align:center;"></table>
             </div>
             </div>
               </td>
             </tr>
         </table>
-        <!-- <?php include_once("./footer.php"); ?>  -->
+
+      <!-- Model -->
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Transaction Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      <div class="mainUpdatediv">
+      <form>
+                    <div class="contentDiv">
+                    <form>
+                <div class="form-group">
+                  <label for="rid">Request ID</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="rid"
+                    readonly
+                  />
+                  
+                </div>
+
+                <label for="bankID">Bank ID</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="bankID"
+                    readonly
+                  />
+                </div>
+
+
+                <div class="form-group">
+                  <label for="bankName">Bank Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="bankName"
+                    readonly
+                  />
+              
+                </div>
+
+                </div>
+
+                <div class="form-group">
+                  <label for="Blood_Group">Blood Group</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="Blood_Group"
+                    readonly
+                  />
+                </div>
+
+
+                <div class="form-group">
+                  <label for="category">Category</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="category"
+                    value=0
+                    readonly
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="quantity">Quantity</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="quantity"
+                    value=0
+                    readonly
+                  />
+                </div>
+
+                
+                <div class="form-group">
+                    <label for="tdate">Transaction Date</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="tdate"
+                      readonly
+                    />
+                
+                </div>
+
+                <div class="form-group">
+                  <label for="cost">Cost/Quantity</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cost"
+                    placeholder="Enter Cost/Quantity"
+                    value=0
+                    onchange='updateTotal(this.value)'
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="total_amount">Total Amount</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="total_amount"
+                    placeholder="0"
+                    value=0
+                    readonly
+                  />
+                </div>
+
+
+    </form>
+    </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" onclick="onConfirmTransaction()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
     </body>
+
+
+
    
 </html>

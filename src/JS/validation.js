@@ -103,15 +103,12 @@ function onLoginSubmit(){
                 console.log(res,this.responseText)
                 alert("Log In Successful")
                 document.cookie='bankId='+this.responseText
+                window.location.replace("./home.php")
             }  
             }
         };
     }
 }
-
-
-
-
 
 function clearErrorMessages(){
     document.getElementById('bemail-error').innerText = ""
@@ -151,8 +148,10 @@ function onRegisterSubmit(){
             if (this.readyState == 4 && this.status == 200) {
             res = Number(this.responseText)
             console.log(res,this.responseText)
-              if(res > 0)
+              if(res > 0){
                     alert("User created succesfully")
+                    window.location.replace="./login.php"
+              }
               else{ 
                 if(res < 0){
                     bankEmailID.focus()
