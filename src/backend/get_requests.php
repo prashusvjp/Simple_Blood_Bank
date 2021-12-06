@@ -2,12 +2,11 @@
 error_reporting(0);
 $data = json_decode(file_get_contents('php://input'), true);
 $connection = new mysqli("localhost","root","mysql");
-
 mysqli_select_db($connection,"db_blood_bank");
 if($connection->connect_error){
     echo "Connection failed";
 }else{
-    $query = "select * from requests from Requesting_BankID='".$data['bankId']."';";
+    $query = "select * from requests where Requesting_BankID='".$data['bankId']."';";
     $result = mysqli_query($connection,$query);
     $data = array();
     while($row =mysqli_fetch_assoc($result))

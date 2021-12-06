@@ -13,7 +13,7 @@ if($connection->connect_error){
     $stock_count = mysqli_fetch_array($result)['count'];
     ++$stock_count;
     $query = "insert into inventory values('I".$stock_count."','".$data['date']."','".$data['bgroup']."'
-    ,'".$data['category']."','".$data['bankId']."','".$data['donerId']."','".$data['status']."');";
+    ,'".$data['category']."','".$data['bankId']."','".$data['donerId']."','".$data['status']."','');";
     $result = mysqli_query($connection,$query);
     if($result)
             echo 1;

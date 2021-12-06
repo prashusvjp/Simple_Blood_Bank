@@ -21,7 +21,7 @@
   <body onload='onLoad()'>
 
   <?php include_once("./headers/staffnavbar.php"); ?>
-  <img src='../res/nodata.png' id='nodata' class='nodataimg' style="display: block;
+  <img src='../res/nodata.png' id='nodata' class='nodataimg' style="display: none;
     margin-left: auto;
     margin-top:100px;
     margin-right:auto;

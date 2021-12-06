@@ -42,7 +42,7 @@ function getContents(){
       <th scope="col">Address</th>
       <th scope="col">DOB</th>
       <th scope="col">Gender</th>
-      <th scope="col">Bloodgroup</th>
+      <th scope="col">Blood Group</th>
       <th scope="col">Role</th>
       <th scope="col">Salary</th>
       <th scope="col">Action</th>

@@ -66,7 +66,8 @@
         </table>
 
       <!-- Model -->
-<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <!-- Model -->
+  <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -92,15 +93,15 @@
                   
                 </div>
 
-                <label for="bankID">Bank ID</label>
+                <div class="form-group">
+                  <label for="bankId">Bank ID</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="bankID"
+                    id="bankId"
                     readonly
                   />
                 </div>
-
 
                 <div class="form-group">
                   <label for="bankName">Bank Name</label>
@@ -110,21 +111,27 @@
                     id="bankName"
                     readonly
                   />
-              
-                </div>
-
                 </div>
 
                 <div class="form-group">
-                  <label for="Blood_Group">Blood Group</label>
+                  <label for="tdate">Transaction Date</label>
                   <input
-                    type="text"
+                    type="date"
                     class="form-control"
-                    id="Blood_Group"
+                    id="tdate"
                     readonly
                   />
                 </div>
 
+                <div class="form-group">
+                  <label for="bgroup">Blood Group</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="bgroup"
+                    readonly
+                  />
+                </div>
 
                 <div class="form-group">
                   <label for="category">Category</label>
@@ -132,7 +139,6 @@
                     type="text"
                     class="form-control"
                     id="category"
-                    value=0
                     readonly
                   />
                 </div>
@@ -143,43 +149,32 @@
                     type="text"
                     class="form-control"
                     id="quantity"
-                    value=0
                     readonly
                   />
                 </div>
 
-                
-                <div class="form-group">
-                    <label for="tdate">Transaction Date</label>
-                    <input
-                      type="date"
-                      class="form-control"
-                      id="tdate"
-                      readonly
-                    />
-                
-                </div>
+               
 
                 <div class="form-group">
-                  <label for="cost">Cost/Quantity</label>
+                  <label for="cost">Cost per Unit</label>
                   <input
                     type="text"
                     class="form-control"
                     id="cost"
                     placeholder="Enter Cost/Quantity"
-                    value=0
-                    onchange='updateTotal(this.value)'
+                    value='0'
                   />
                 </div>
 
-                <div class="form-group">
+
+                  <div class="form-group">
                   <label for="total_amount">Total Amount</label>
                   <input
                     type="text"
                     class="form-control"
                     id="total_amount"
-                    placeholder="0"
-                    value=0
+                    placeholder="Total Amount"
+                    value='0'
                     readonly
                   />
                 </div>
@@ -196,9 +191,6 @@
     </div>
   </div>
 </div>
-
-
-
 
     </body>
 

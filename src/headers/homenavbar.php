@@ -37,6 +37,9 @@
           <a class="dropdown-item" href="add_doner.php">Add Doner</a>
           <a class="dropdown-item" href="update_doner.php">Update Doner</a>
       </li>
+      <li class="nav-item  ">
+        <a class="nav-link" href="login.php"  onclick="{document.cookie='';alert('Logged out')}">Log out<span class="sr-only">(current)</span></a>
+      </li>
     </ul>
   </div>
 </nav>

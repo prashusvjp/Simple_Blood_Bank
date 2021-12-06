@@ -110,6 +110,13 @@ function onLoginSubmit(){
     }
 }
 
+function logout(){
+    document.cookie = ''
+    window.location.replace="./login.php"
+    alert("Logged out") 
+}
+
+
 function clearErrorMessages(){
     document.getElementById('bemail-error').innerText = ""
     document.getElementById('bphone-error').innerText = ""

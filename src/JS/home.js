@@ -5,12 +5,13 @@ function onLoad(){
     serviceable_table = document.getElementById('serviceable_table')
     serviceable_table_nodata = document.getElementById('nodata')
     requestID_field = document.getElementById('rid')
-    bankId_field = document.getElementById('bankID')
+    bankId_field = document.getElementById('bankId')
     bankName_field = document.getElementById('bankName')
-    blood_group_field = document.getElementById('Blood_Group')
+    blood_group_field = document.getElementById('bgroup')
     category_field = document.getElementById('category')
     quantity_field = document.getElementById('quantity')
     cost_field = document.getElementById('cost')
+    cost_field.addEventListener("change",updateTotal)
     tdate_field = document.getElementById('tdate')
     total_amount_field = document.getElementById('total_amount')
     tdate_field.valueAsDate = new Date();
@@ -19,8 +20,8 @@ function onLoad(){
     getContents()
 }
 
-function updateTotal(value){
-    total_amount_field.value = Number(quantity_field.value) * Number(value)
+function updateTotal(){
+    total_amount_field.value = Number(quantity_field.value) * Number(cost_field.value)
 }
 
 function onProceedClick(value){
@@ -48,9 +49,14 @@ function onConfirmTransaction(){
     }))
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            inventory_status=JSON.parse(this.responseText)
-            inventory_table.innerHTML = getText(inventory_status)
-            getServiceableRequest(inventory_status)
+           if(this.responseText == 1){
+            alert("Transaction successful")
+            getInventoryStatus()
+           }else{
+               console.log(this.responseText)
+                alert("Sorry, something went wrong")
+
+           }
         }
     }
 }
@@ -184,7 +190,6 @@ function getServiceableRequest(inventory_status){
     request.send(JSON.stringify({"bankId":getBankIdFromCookie()}))
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText)
             if(this.responseText == 0){
                 serviceable_table_nodata.style.display ="";
                 serviceable_table.style.display ="none";
