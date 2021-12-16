@@ -72,8 +72,6 @@ TransactionDate date not null,
 foreign key(From_BankID) references Blood_Bank(BankID),
 foreign key(To_BankID) references Blood_Bank(BankID));
 
-use db_blood_bank1;
-
 insert into blood_bank values
 ('B1','Spandana Hospital','bloodbank@spandana.com',1234567890,'Rajajinagara, Bengaluru','1999-03-01','Open','spandana@123');
 insert into blood_bank values
