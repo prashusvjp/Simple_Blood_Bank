@@ -72,6 +72,7 @@ TransactionDate date not null,
 foreign key(From_BankID) references Blood_Bank(BankID),
 foreign key(To_BankID) references Blood_Bank(BankID));
 
+use db_blood_bank1;
 
 insert into blood_bank values
 ('B1','Spandana Hospital','bloodbank@spandana.com',1234567890,'Rajajinagara, Bengaluru','1999-03-01','Open','spandana@123');
@@ -94,21 +95,21 @@ insert into blood_bank values
 
 
 insert into bank_staff values
-('S1','B1','Rajan Sha','rajansha@gmail.com',9876545678,'1997-08-21','M','AB+','Ramdevnagara','rajansha123','Administrator','','','Existing');
+('S1','B1','Rajan Sha','rajansha@gmail.com',9876545678,'1997-08-21','M','AB+','Ramdevnagara','rajansha123','Administrator','',0,'Existing');
 insert into bank_staff values
-('S2','B1','James Potter','jamespotter@gmail.com',8601498981,'2000-07-10','M','O+','Bengaluru','James12345','Data entry','','','Existing');
+('S2','B1','James Potter','jamespotter@gmail.com',8601498981,'2000-07-10','M','O+','Bengaluru','James12345','Data entry','',0,'Existing');
 insert into bank_staff values
-('S3','B1','Bharghhav M','bharghav@gmail.com',7209879007,'1999-02-02','M','B-','Bengaluru','Bharghav123','Data entry','','','Existing');
+('S3','B1','Bharghhav M','bharghav@gmail.com',7209879007,'1999-02-02','M','B-','Bengaluru','Bharghav123','Data entry','',0,'Existing');
 insert into bank_staff values
-('S4','B4','Prashanth S','prashusvjp@gmail.com',9113042617,'2001-08-21','M','O+','Bengaluru','prashusvjp','Data entry','','','Existing');
+('S4','B4','Prashanth S','prashusvjp@gmail.com',9113042617,'2001-08-21','M','O+','Bengaluru','prashusvjp','Data entry','',0,'Existing');
 insert into bank_staff values
-('S5','B4','Jyothi R','jyothir@gmail.com',9876789876,'1998-01-19','F','O+','Bengaluru','jr1998','Administrator','','','Existing');
+('S5','B4','Jyothi R','jyothir@gmail.com',9876789876,'1998-01-19','F','O+','Bengaluru','jr1998','Administrator','',0,'Existing');
 insert into bank_staff values
-('S6','B7','Prashanth','prashanth1380@gmail.com',7828348229,'1980-03-01','M','A-','Adayar, Chennai','prasahnth123','Data entry','','','Existing');
+('S6','B7','Prashanth','prashanth1380@gmail.com',7828348229,'1980-03-01','M','A-','Adayar, Chennai','prasahnth123','Data entry','',0,'Existing');
 insert into bank_staff values
-('S7','B5','Rashmika','rashmika@gmail.com',7828348229,'1990-12-12','F','A+','Kanteerava Studio, Bengaluru','rashmika123','Lab Technician','','','Existing');
+('S7','B5','Rashmika','rashmika@gmail.com',7828348229,'1990-12-12','F','A+','Kanteerava Studio, Bengaluru','rashmika123','Lab Technician','',0,'Existing');
 insert into bank_staff values
-('S8','B9','Ramesh P','rameshp@peopletree.com',9878923451,'1982-05-21','F','A-','Goraguntepalya, Bengaluru','ramesh123','Administrator','','','Existing');
+('S8','B9','Ramesh P','rameshp@peopletree.com',9878923451,'1982-05-21','F','A-','Goraguntepalya, Bengaluru','ramesh123','Administrator','',0,'Existing');
 
 
 insert into doner values
@@ -123,15 +124,15 @@ insert into doner values
 ('D5','Manasa','manasa@gmail.com',8908123454,'2001-03-17','F','B-','K R Market','');
 
 insert into inventory values
-('I1','2021-10-12','AB-','Plasma','B3','0004','Available');
+('I1','2021-10-12','AB-','Plasma','B3','D4','In-stock','');
 insert into inventory values
-('I2','2021-10-12','AB-','RBC','B3','0004','Available');
+('I2','2021-10-12','AB-','RBC','B3','D4','In-stock','');
 insert into inventory values
-('I3','2019-12-14','O-','Plasma','B5','0002','Expired');
+('I3','2019-12-14','O-','Plasma','B5','D2','In-stock','');
 insert into inventory values
-('I4','2019-12-14','AB-','RBC','B5','0002','Expired');
+('I4','2019-12-14','AB-','RBC','B5','D2','In-stock','');
 insert into inventory values
-('I5','2021-08-12','AB-','RBC','B4','0005','Expired');
+('I5','2021-08-12','AB-','RBC','B4','D5','In-stock','');
 
 
 insert into requests values
@@ -149,3 +150,4 @@ insert into transactions values
 ('T1','R2','B3','B6',981.00,'2021-12-16');
 insert into transactions values
 ('T2','R5','B3','B7',1962.00,'2021-12-16');
+
